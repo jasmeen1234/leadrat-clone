@@ -164,7 +164,7 @@ function BookSeat({ ticketQuantity, ticketType }) {
     <div className="bookseat">
        {seats.map((row, rowIndex) => (
         <div key={rowIndex} style={{ display: "flex", width: "100%" }}>
-          <div style={{ width: "40px", marginTop: "15px" }}>
+          <div style={{ width: "40px", marginTop: "15px",marginLeft:"12px" }}>
             {String.fromCharCode(65 + rowIndex)}
           </div>
           {row.map((seat, seatIndex) => (

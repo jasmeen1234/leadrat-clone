@@ -9,8 +9,8 @@ function App() {
   return (
    <div className='app'>
     <div className='inner'>
-     <Header/>
-     <div className='app-left'>
+     <Header/> 
+     <div className='app-left'>     
      <div className='left'>
             <div className='dropdown'>
 

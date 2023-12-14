@@ -42,7 +42,6 @@
   }
   .hover:hover {
     cursor: pointer;
-    
     filter: invert(95%) sepia(41%) saturate(6882%) hue-rotate(54deg) brightness(90%) contrast(108%);
   }
   
@@ -50,13 +49,10 @@
    
     filter: invert(62%) sepia(27%) saturate(515%) hue-rotate(71deg) brightness(84%) contrast(88%);
   }
-
-
-
-
-
-
-
+  .premiumcolor:hover{
+    cursor: pointer;
+    filter: invert(95%) sepia(41%) saturate(6882%) hue-rotate(54deg) brightness(90%) contrast(108%);
+  }
 
 
   .bttn {
@@ -64,7 +60,7 @@
     height: 40px;
     position: absolute;
     color: white;
-    background-color: #ff4d4d;
+    background-color: brown;
     bottom: 10px;
     right: 15%;
     border: none;
@@ -79,7 +75,7 @@
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
   .bttn:hover {
-    background-color: #c9ff33;
+    background-color: coral;
     transform: scale(1.05);
   }
 
