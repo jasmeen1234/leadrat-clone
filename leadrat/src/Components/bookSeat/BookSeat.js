@@ -69,6 +69,9 @@ function BookSeat({ ticketQuantity, ticketType }) {
   );
   const [open, setOpen] = useState(false);
   const [isopen, isSetOpen] = useState(false);
+  const[price, setPrice]=useState(0);
+  let standardPrice=300;
+  let premiumPrice=250;
   const [selectedSeats, setSelectedSeats] = useState(
     seats.flat().filter((item) => item.isSelected).length
   );
@@ -87,44 +90,47 @@ function BookSeat({ ticketQuantity, ticketType }) {
     if (!ticketQuantity) {
       setOpen(true);
     }
+    console.log("check tickettype")
     if (seat.Type !== ticketQuantity.type) {
       alert("Please select ticket of type" + ticketQuantity.type);
 
       return;
     }
 
-    const updatedSeats = selectPrev.map((row) => {
-      return row.map((seat) => {
-        if (seat.id === seatId && !seat.isBooked) {
-          // Get the index of the selected seat in the current row
-          const seatIndex = row.indexOf(seat);
+    const seatUpdate = selectPrev.map((row) => {
+      return row.map((s) => {
+        if (s.id === seatId && !s.isBooked) {
+       
+          // current row in selected seat check index
+          const seatIndex = row.indexOf(s);
 
-          let selectedCount = 0;
-          // Count the number of selected seats in the current row
+          let Count = 0;
+          // Count the number of current row
+          
           row.forEach((s) => {
             if (s.isSelected) {
-              selectedCount++;
+              Count++;
             }
           });
 
-          if (selectedCount < ticketQuantity) {
+          if (Count < ticketQuantity) {
             // Select seats in the same row up to ticketNumber
             for (let i = seatIndex; i < row.length; i++) {
               if (row[i].id !== 0 && !row[i].isBooked && !row[i].isSelected) {
                 row[i].isSelected = true;
-                selectedCount++;
+                Count++;
               }
-              if (selectedCount >= ticketQuantity) {
+              if (Count >= ticketQuantity) {
                 break;
               }
             }
           }
         }
-        return seat;
+        return s;
       });
     });
   };
-  const proceedHandle = () => {
+  const proceedButton = () => {
     console.log("proceed buttn call");
     if (ticketQuantity == "") {
       // alert("please select ticket quantity")
@@ -145,7 +151,12 @@ function BookSeat({ ticketQuantity, ticketType }) {
       isSetOpen(true);
       // alert(`you have booked ${ticketQuantity} ${ticketQuantity.type} tikets.. !`)
     }
-
+    if(ticketType=='Standard' && ticketQuantity){
+      setPrice(ticketQuantity * standardPrice)
+    }
+    if(ticketType=='Premium' && ticketQuantity){
+      setPrice(ticketQuantity * premiumPrice)
+    }
     setSelectedSeats(0);
   };
   return (
@@ -182,7 +193,7 @@ function BookSeat({ ticketQuantity, ticketType }) {
         );
       })}
 
-      <button className="bttn" onClick={proceedHandle}>
+      <button className="bttn" onClick={proceedButton}>
         Proceed
       </button>
 
@@ -192,6 +203,7 @@ function BookSeat({ ticketQuantity, ticketType }) {
         isSetOpen={isSetOpen}
         ticketQuantity={ticketQuantity}
         ticketType={ticketType}
+        price={price}
       />
     </div>
   );

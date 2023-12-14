@@ -2,18 +2,14 @@ import React,{useState} from 'react'
 import './App.css';
 import BookSeat from './Components/bookSeat/BookSeat';
 import WeekendIcon from '@mui/icons-material/Weekend';
+import Header from './Header';
 function App() {
-  const[ticketType, setTicketType]=useState('standard');
+  const[ticketType, setTicketType]=useState('Standard');
   const[ticketQuantity, setTicketQuantity]=useState(0)
   return (
    <div className='app'>
     <div className='inner'>
-      <div className='header'>
-      <img src="bookseat.png" style={{width:"40px",height:"40px"}} />
-      <h2>Its Time To Movie</h2>
-      <p style={{fontsize:"18px"}}> Movie Name: ANIMAL</p>
-      <p>Time : 09:00 PM</p>
-     </div> 
+     <Header/>
      <div className='app-left'>
      <div className='left'>
             <div className='dropdown'>
@@ -40,7 +36,7 @@ function App() {
 
               </select>
             </div>
-           <BookSeat type={ticketType} ticketQuantity={ticketQuantity}/>
+           <BookSeat ticketType={ticketType} ticketQuantity={ticketQuantity}/>
             </div>
             <div className='right'>
               <div>
