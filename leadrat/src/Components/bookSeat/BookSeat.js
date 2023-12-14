@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import PopupDialog from "../PopupDialog";
 import PopupProceed from "./PopupProceed";
 import "./bookseat.css";
-import { Alert } from "@mui/material";
-import { Stack } from "@mui/material";
+
+
 import WeekendIcon from "@mui/icons-material/Weekend";
 function BookSeat({ ticketQuantity, ticketType }) {
   const layout = [
@@ -11,6 +11,7 @@ function BookSeat({ ticketQuantity, ticketType }) {
       0, 0, 0, 0, 0, 1, 2, 0, 3, 4, 0, 5, 6, 0, 7, 8, 0, 9, 10, 0, 11, 12, 0,
       13, 14,
     ],
+    
     [
       0, 0, 0, 0, 0, 15, 16, 0, 17, 18, 0, 19, 20, 0, 21, 22, 0, 23, 24, 0, 25,
       26, 0, 27, 28,
