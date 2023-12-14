@@ -165,7 +165,7 @@ function BookSeat({ticketQuantity,ticketType}) {
 
       <button className='bttn' onClick={proceedHandle}>Proceed</button>
       
-    <PopupDialog open={open} onClose={closeModal} setOpen={setOpen} ticketQuantity={ticketQuantity} ticketType={ticketType}/>
+    <PopupDialog open={open} setOpen={setOpen} ticketQuantity={ticketQuantity} ticketType={ticketType}/>
     </div>
   )
 }
