@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import PopupDialog from "../PopupDialog";
 import PopupProceed from "./PopupProceed";
 import "./bookseat.css";
+import Seat from "./Seat";
 
 
-import WeekendIcon from "@mui/icons-material/Weekend";
 function BookSeat({ ticketQuantity, ticketType }) {
   const layout = [
     [
@@ -162,37 +162,26 @@ function BookSeat({ ticketQuantity, ticketType }) {
   };
   return (
     <div className="bookseat">
-      {seats.map((row, index1) => {
-        return (
-          <div key={index1} style={{ display: "flex", width: "100%" }}>
-            <div style={{ width: "40px", marginTop: "15px" }}>
-              {String.fromCharCode(65 + index1)}
-            </div>
-            {row.map((seat, index2) => (
-              <>
-                <p key={index2}></p>
-                {seat.isZero !== 0 ? (
-                  <WeekendIcon
-                    onClick={() => bookHandler(seat.id, seat)}
-                    className={`${
-                      seat.isBooked
-                        ? "booked"
-                        : seat.isSelected
-                        ? "selected"
-                        : seat.type === "Premium"
-                        ? "premiumcolor"
-                        : "available hover seat"
-                    }`}
-                    style={{ width: "3.5%", height: "40px", color: "black" }}
-                  />
-                ) : (
-                  <span style={{ marginRight: "3.5%" }}></span>
-                )}
-              </>
-            ))}
+       {seats.map((row, rowIndex) => (
+        <div key={rowIndex} style={{ display: "flex", width: "100%" }}>
+          <div style={{ width: "40px", marginTop: "15px" }}>
+            {String.fromCharCode(65 + rowIndex)}
           </div>
-        );
-      })}
+          {row.map((seat, seatIndex) => (
+            <React.Fragment key={seatIndex}>
+              <p></p>
+              {seat.isZero !== 0 ? (
+                <Seat
+                  seat={seat}
+                  onClick={() => bookHandler(seat.id, seat)}
+                />
+              ) : (
+                <span style={{ marginRight: "3.5%" }}></span>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      ))}
 
       <button className="bttn" onClick={proceedButton}>
         Proceed
