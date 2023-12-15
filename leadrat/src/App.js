@@ -22,7 +22,7 @@ function App() {
 
               <label htmlFor="qty" >Ticket Quantity:</label>
               <select id="qty" value={ticketQuantity} onChange={(e)=>setTicketQuantity(e.target.value)} >
-                <option value="">Qnty</option>
+                <option value="">Qty</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
