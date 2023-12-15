@@ -43,7 +43,7 @@ function App() {
               <h2>Key To Seat Layout:</h2>
               <ul>
                 <li>
-                  <WeekendIcon className='available seat' style={{width:"35px",height:"35px"}}/>
+                  <WeekendIcon className='available seat'/>
                   <p>Available</p>
                 </li>
                 <li>
