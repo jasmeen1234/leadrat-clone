@@ -3,6 +3,7 @@ import PopupDialog from "../PopupDialog";
 import PopupProceed from "./PopupProceed";
 import "./bookseat.css";
 import Seat from "./Seat";
+import Dialogpopup from "./Dialogpopup";
 
 
 function BookSeat({ ticketQuantity, ticketType }) {
@@ -185,9 +186,14 @@ function BookSeat({ ticketQuantity, ticketType }) {
 
       <button className="bttn" onClick={proceedButton}>
         Proceed
+        <span className="first"></span>
+          
+          <span className="third"></span>
+          <span className="fourth"></span>
       </button>
 
       <PopupDialog open={open} setOpen={setOpen} />
+     
       <PopupProceed
         isopen={isopen}
         isSetOpen={isSetOpen}

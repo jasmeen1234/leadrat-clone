@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+ 
+  font-family: 'Lato', sans-serif;
   /* margin-top: 1px; */
 }
 .header{
@@ -44,6 +45,14 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.dropdown:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
 .app-left{
   width: 100vw;

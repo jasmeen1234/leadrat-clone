@@ -1,30 +1,26 @@
 import React from "react";
 import { Dialog, Card } from "@mui/material";
 
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 function PopupDialog({ open, setOpen }) {
   return (
     <Card>
-      <Dialog
-        
-        open={open}
-        onClose={() => {
-          setOpen(false);
-        }}
-      >
-       <div style={{ padding:"40px",alignItems:"center" }} >
-     <div>
-     <h1 style={{  }}>
-          Please Select Ticket Quantity
-        </h1>
-     </div>
-       <div style={{marginLeft:"50%",marginTop:"5%"}}>
-       <CancelIcon style={{ color: "red",height:"20%",width:"25%" }} />
-       </div>
-       </div>
-      </Dialog>
-    </Card>
+    <Dialog
+      open={open}
+      onClose={() => {
+        setOpen(false);
+      }}
+    >
+      <div style={{ padding: "35px", alignItems: "center", width: "300px", height: "250px" }}>
+        <div style={{ marginLeft: "50%", marginTop: "12%",marginLeft:"40%" ,marginBottom:"8%"}}>
+          <CancelIcon style={{ color: "red", height: "25%", width: "35%" }} />
+        </div>
+        <div>
+          <h4 style={{fontFamily:"'Lato', sans-serif"}}>Please Select Ticket Quantity</h4>
+        </div>
+      </div>
+    </Dialog>
+  </Card>
   );
 }
 

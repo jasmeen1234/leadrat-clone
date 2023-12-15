@@ -17,7 +17,7 @@ function PopupProceed({
           isSetOpen(false);
         }}
       >
-        <div style={{ margin: "5%", padding: "40px", alignItems: "center" }}>
+        <div style={{ margin: "3%", padding: "20px", alignItems: "center" }}>
           <img
             src="bookshow.jpeg"
             style={{
@@ -29,12 +29,12 @@ function PopupProceed({
             alt="bookmyshow"
           />
           <div style={{alignItems: "center"}}>
-            <h2
-              style={{ paddingTop: "5px" }}
-            >{`You have booked ${ticketQuantity} ${ticketType.toLowerCase()} tickets.!`}</h2>
-            <h3 style={{ paddingTop: "5px" }}>{`total price: ${price}`}</h3>
-            <h4 style={{ paddingTop: "5px" }}>Time: 09:00pm MAX</h4>
-            <CheckCircleIcon style={{marginLeft:"40%", color: "blue",height:"20%",width:"25%", paddingTop: "5px" }} />
+            <h3
+              style={{ paddingTop: "8px" }}
+            >{`You have booked ${ticketQuantity} ${ticketType.toLowerCase()} tickets.!`}</h3>
+            <h4 style={{ paddingTop: "5px" }}>{`Total Price: ${price}`}</h4>
+            <h5 style={{ paddingTop: "5px" }}>Time: 09:00pm MAX</h5>
+            <CheckCircleIcon style={{marginLeft:"40%", color: "blue",height:"20%",width:"20%", paddingTop: "5px" }} />
           </div>
         </div>
       </Dialog>

@@ -65,7 +65,7 @@
     right: 15%;
     border: none;
     outline: none;
-    border-radius: 10px;
+    border-radius: 80px;
     cursor: pointer;
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -78,6 +78,32 @@
     background-color: coral;
     transform: scale(1.05);
   }
+  /* .bttn span{
+    transition: all 0.5s;
+    z-index: -1;
+  }
+  .bttn .first{
+    content: "";
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background:coral;
+  }
+  .bttn:hover .first{
+    top: 0;
+    right: 0;
+  }
+  .bttn .third{
+    content: "";
+  position: absolute;
+  /* left: 20%; */
+  /* height: 100%;
+  top: 100%;
+  width: 25%;
+  background:coral;
+  } */ 
 
   /* .premiumcolor{ */
     /* color: green; */
